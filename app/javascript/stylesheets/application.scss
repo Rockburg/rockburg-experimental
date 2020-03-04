@@ -1,0 +1,20 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body {
+  background: theme("colors.skyblue");
+}
+
+header[role="banner"] {
+  nav {
+    a {
+      &.active {
+        border-top: 3px solid theme("colors.blue");
+      }
+      &:hover {
+        border-top: 3px solid theme("colors.green");
+      }
+    }
+  }
+}
