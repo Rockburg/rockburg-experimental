@@ -1,0 +1,47 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: 'w-1/2') do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/6">
+      <%= f.label :name, 'Username', class: 'block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' %>
+    </div>
+    <div class="md:w-5/6">
+      <%= f.text_field :name, autofocus: true, class: 'bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue' %>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/6">
+      <%= f.label :email, class: 'block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' %>
+    </div>
+    <div class="md:w-5/6">
+      <%= f.email_field :email, autocomplete: "email", class: 'bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue' %>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/6">
+      <%= f.label :password, class: 'block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' %>
+    </div>
+    <div class="md:w-5/6">
+      <%= f.password_field :password, autocomplete: "new-password", class: 'bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue' %>
+    </div>
+  </div>
+  <div class="md:flex md:items-center mb-6">
+    <div class="md:w-1/6">
+      <%= f.label :password_confirmation, 'Password, again', class: 'block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4' %>
+    </div>
+    <div class="md:w-5/6">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-blue' %>
+    </div>
+  </div>
+
+  <div class="md:flex md:items-center">
+    <div class="md:w-1/6"></div>
+    <div class="md:w-5/6">
+      <%= f.submit "Sign up", class: 'bg-blue text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-darker border-2 border-blue-darker cursor-pointer button' %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>

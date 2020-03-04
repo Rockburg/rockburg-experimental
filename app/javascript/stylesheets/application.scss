@@ -10,11 +10,24 @@ header[role="banner"] {
   nav {
     a {
       &.active {
-        border-top: 3px solid theme("colors.blue");
+        border-top: 3px solid theme("colors.blue.default");
       }
       &:hover {
         border-top: 3px solid theme("colors.green");
       }
     }
+  }
+}
+
+h2 {
+  @apply text-3xl font-black;
+}
+
+.button {
+  border-color: theme("colors.blue.darker");
+  box-shadow: 0 3px 0 theme("colors.blue.darker");
+  &:hover {
+    // border-color: darken(desaturate(theme("colors.blue"), 15%), 10%);
+    // box-shadow: 0 3px 0 theme("colors.blue.darkest");
   }
 }
