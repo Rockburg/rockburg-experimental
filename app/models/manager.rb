@@ -6,4 +6,8 @@ class Manager < ApplicationRecord
 
   ## -- VALIDATIONS
   validates :name, uniqueness: true, presence: true
+
+  def avatar_url
+    Manager::AvatarURL.(manager: self).result
+  end
 end

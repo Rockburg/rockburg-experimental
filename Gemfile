@@ -11,6 +11,7 @@ gem 'puma', '~> 4.1'
 
 # Data
 gem 'pg', '>= 0.18', '< 2.0'
+gem 'ensurance'  # lets you .ensure your models
 
 # Frontend
 gem 'sass-rails', '>= 6' # Use SCSS for stylesheets
@@ -20,6 +21,14 @@ gem 'jbuilder', '~> 2.7' # Build JSON APIs with ease. Read more: https://github.
 
 # User Authentication
 gem 'devise'
+
+# Misc
+gem 'awesome_print' # print anything in the console
+gem 'colorize' # colored strings are nice for debugging
+gem 'dotiw' # Better distance of time in words for Rails
+gem 'fast_blank' # a booster for .blank?/.present? calls
+gem 'interactor' # service objects
+gem 'interactor-contracts' # interface contracts for service objects
 
 
 # Use Redis adapter to run Action Cable in production

@@ -17,19 +17,34 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="p-8 pt-0">
-    <div class="container mx-auto max-w-screen-l">
-      <header class="flex items-center justify-between flex-wrap px-6" role="banner">
+  <body class="p-20 pt-0">
+    <div class="container mx-auto max-w-screen-l relative">
+      <header class="flex items-center justify-between flex-wrap px-6 relative" role="banner">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
           <%= link_to image_tag('logo.svg',), root_path, class: '' %>
         </div>
         <nav class="w-full block flex-grow justify-center lg:flex lg:items-center lg:w-auto">
           <div class="text-xl font-black">
+            <% if manager_signed_in? %>
             <a href="#responsive-header" class="active mt-4 lg:inline-block lg:mt-0 text-black mr-10 py-3">
               Your Bands
             </a>
+            <% else %>
+            <%= link_to "Sign up", new_manager_registration_path, class: 'active mt-4 lg:inline-block lg:mt-0 text-black mr-10 py-3' %>
+            <%= link_to "Sign in", new_manager_session_path, class: 'mt-4 lg:inline-block lg:mt-0 text-black py-3' %>
+            <% end %>
           </div>
         </nav>
+        <% if manager_signed_in? %>
+        <div class="avatar">
+          <%= link_to image_tag(current_manager.avatar_url), manager_path(current_manager), class: 'avatar-link' %>
+          <div class="tooltip">
+            <p>
+              <%= link_to "Sign out", destroy_manager_session_path, method: :delete %>
+            </p>
+          </div>
+        </div>
+        <% end %>
       </header>
       <div class="container bg-white rounded-large p-10">
         <p class="notice"><%= notice %></p>
